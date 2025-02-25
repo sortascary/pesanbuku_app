@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "496644722777",
+    "project_id": "pesanbuku-8c0a5",
+    "storage_bucket": "pesanbuku-8c0a5.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:496644722777:android:bf6d45c81f8f81d3422148",
+        "android_client_info": {
+          "package_name": "com.example.pesanbuku_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCwgawB0Vf-5xV5_H7wvljKgiWzgRvxT4M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
