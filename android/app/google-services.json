@@ -12,7 +12,20 @@
           "package_name": "com.example.pesanbuku_app"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "496644722777-oig6a27ab7s4ukmnpfhgps8fu1l5hlip.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.pesanbuku_app",
+            "certificate_hash": "9b67973450863cafa2d4d793615786d1020eb4ae"
+          }
+        },
+        {
+          "client_id": "496644722777-qmjl7tn918tjdtgmn3f4251n45cku42a.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyCwgawB0Vf-5xV5_H7wvljKgiWzgRvxT4M"
@@ -20,7 +33,19 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "496644722777-78vtfv2ts6t8du11e9ql5hmj00l1jrlv.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "496644722777-8tn6mml8pkrb5u2n3hg5mmqbkn04tnh8.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.pesanbukuApp"
+              }
+            }
+          ]
         }
       }
     }
