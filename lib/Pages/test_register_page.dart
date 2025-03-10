@@ -28,16 +28,19 @@ class TestRegisterPage extends StatelessWidget {
             SizedBox(height: 60.0,),
             TextField(
               controller: registerController.PhoneController,
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+              ),
               decoration: InputDecoration(
-                hintText: "enter phone number here",
+                hintText: "Enter phone number here",
                 filled: true,
-                fillColor: Colors.grey,
+                fillColor: const Color(0xFFDFDFDF),
                 border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(25.0),
+                  borderRadius: BorderRadius.circular(5.0),
                   borderSide: BorderSide.none
                   ),
                 focusedBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(25.0),
+                  borderRadius: BorderRadius.circular(5.0),
                   borderSide: BorderSide.none
                   ),
               ),

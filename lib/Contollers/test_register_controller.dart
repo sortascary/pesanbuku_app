@@ -21,20 +21,30 @@ class TestRegisterController extends GetxController {
   }
 
   Future<void> SendOTP() async {
-    _auth.verifyPhoneNumber(
-      phoneNumber: PhoneController.text,
-      verificationCompleted: (phoneAuthCredential) {},
-      verificationFailed: (error) {
-        log(error.toString());
-      },
-      codeSent: (verificationId, forceResendingToken) {
-        Get.toNamed(MyRoutes.testOTP);
-        verifyID.value = verificationId;
-      },
-      codeAutoRetrievalTimeout: (verificationId) {
-        print("auto retrival timed out");
-      },
-    );
+    try {
+      await _auth.verifyPhoneNumber(
+        phoneNumber: PhoneController.text,
+        verificationCompleted: (phoneAuthCredential) async {
+          // Auto sign-in if verification is completed automatically.
+          await _auth.signInWithCredential(phoneAuthCredential);
+          Get.offAllNamed(MyRoutes.login); // Navigate to home on success.
+        },
+        verificationFailed: (error) {
+          log(error.toString());
+          Get.snackbar("Verification Failed", error.message ?? "Unknown error");
+        },
+        codeSent: (verificationId, forceResendingToken) {
+          verifyID.value = verificationId;
+          Get.toNamed(MyRoutes.testOTP);
+        },
+        codeAutoRetrievalTimeout: (verificationId) {
+          log("Auto retrieval timed out");
+        },
+      );
+    } catch (e) {
+      log("Error sending OTP: $e");
+      Get.snackbar("Error", "Failed to send OTP");
+    }
   }
 
   Future<void> VerifyOTP() async {
