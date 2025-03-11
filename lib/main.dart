@@ -3,15 +3,16 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:pesanbuku_app/Routes/Routes.dart';
 import 'package:pesanbuku_app/firebase_options.dart';
+import 'package:pesanbuku_app/Pages/onboarding_page.dart';
 
-Future<void> main() async{
-  try{
+Future<void> main() async {
+  try {
     WidgetsFlutterBinding.ensureInitialized();
     await Firebase.initializeApp(
       options: DefaultFirebaseOptions.currentPlatform,
     );
     runApp(const MyApp());
-    } catch(e){
+  } catch (e) {
     print('Error initializing app: $e');
   }
 }
@@ -22,13 +23,14 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
         fontFamily: 'Poppins',
       ),
-      initialRoute: MyRoutes.testR,
+      home: const OnboardingScreen(),
       getPages: AppPages.pages,
     );
   }
