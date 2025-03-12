@@ -27,21 +27,22 @@ class AppPages {
     ),
     GetPage(
       name: MyRoutes.loginSekolah,
-      page: () => LoginPage(userType: 'sekolah'),
+       page: () => LoginPage(userType: 'sekolah'),
       binding: LoginBinding(),
     ),
     GetPage(
       name: MyRoutes.registerDistributor,
-      page: () => RegisterPage(userType: 'distributor'),
+      page: () => RegisterPage(userType: 'distributor'), 
       binding: RegisterBinding(),
     ),
     GetPage(
       name: MyRoutes.onBoarding,
-      page: () => OnboardingScreen(),
+      page: () => OnboardingScreen(), 
+      binding: RegisterBinding(),
     ),
     GetPage(
       name: MyRoutes.registerSekolah,
-      page: () => RegisterPage(userType: 'sekolah'),
+      page: () => RegisterPage(userType: 'sekolah'), 
       binding: RegisterBinding(),
     ),
     GetPage(
