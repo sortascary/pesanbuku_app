@@ -8,7 +8,7 @@ class BackgroundPainter extends CustomPainter {
     Path leftBottomPath = Path();
     leftBottomPath.moveTo(0, size.height * 0.7);
     leftBottomPath.quadraticBezierTo(
-      size.width * 0.2, size.height * 0.85,
+      size.width * 0, size.height * 0.90,
       size.width * 0.5, size.height,
     );
     leftBottomPath.lineTo(0, size.height);

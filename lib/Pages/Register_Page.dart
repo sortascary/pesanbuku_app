@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:pesanbuku_app/Contollers/register_controller.dart';
+import 'package:pesanbuku_app/Controllers/register_controller.dart';
 import 'package:pesanbuku_app/Widgets/custom_painter_background.dart';
 
 class RegisterPage extends StatelessWidget {
@@ -12,50 +12,50 @@ class RegisterPage extends StatelessWidget {
   Widget build(BuildContext context) {
     final RegisterController controller = Get.find<RegisterController>();
 
-    return PopScope(
-      canPop: false,
-      onPopInvokedWithResult: (didPop, result) {
-        if (!didPop) {
-          Get.offAllNamed('/onboarding');
-        }
-      },
-      child: Scaffold(
-        body: Stack(
-          children: [
-            Positioned.fill(
-              child: CustomPaint(
-                painter: BackgroundPainter(),
-              ),
+    return Scaffold(
+      body: Stack(
+        children: [
+          Positioned.fill(
+            child: CustomPaint(
+              painter: BackgroundPainter(),
             ),
-            SafeArea(
+          ),
+          SafeArea(
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20.0),
               child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Align(
-                    alignment: Alignment.topLeft,
-                    child: IconButton(
-                      icon: Icon(Icons.arrow_back, color: Colors.black),
-                      onPressed: () => Get.offAllNamed('/onboarding'),
+                  IconButton(
+                    icon: Icon(Icons.arrow_back, color: Colors.black),
+                    onPressed: () => Get.offAllNamed('/onboarding'),
+                  ),
+                  SizedBox(height: 20),
+                  Center(
+                    child: Column(
+                      children: [
+                        Text(
+                          "Create Account",
+                          style: TextStyle(
+                              fontSize: 24, fontWeight: FontWeight.bold),
+                        ),
+                        SizedBox(height: 12),
+                        Text(
+                          "Create an account so you can\nexplore all the items available",
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                              fontSize: 16,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.black),
+                        ),
+                        SizedBox(height: 50),
+                      ],
                     ),
                   ),
                   Expanded(
                     child: SingleChildScrollView(
-                      padding: const EdgeInsets.all(20.0),
                       child: Column(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Text(
-                            "Create Account",
-                            style: TextStyle(
-                                fontSize: 24, fontWeight: FontWeight.bold),
-                          ),
-                          SizedBox(height: 10),
-                          Text(
-                            "Create an account so you can explore all the items available",
-                            textAlign: TextAlign.center,
-                            style:
-                                TextStyle(fontSize: 14, color: Colors.black54),
-                          ),
-                          SizedBox(height: 30),
                           if (userType == 'distributor') ...[
                             buildTextField(controller.nameController, "Nama"),
                             buildTextField(
@@ -65,18 +65,17 @@ class RegisterPage extends StatelessWidget {
                                 controller.keyController, "Distributor Key"),
                           ] else if (userType == 'sekolah') ...[
                             buildTextField(controller.schoolNameController,
-                                "Nama Sekolah"),
+                                "Nama sekolah"),
                             buildTextField(controller.headNameController,
-                                "Kepala Sekolah"),
+                                "Kepala/Perwakilan sekolah"),
                             buildTextField(
                                 controller.passwordController, "Password",
                                 isPassword: true),
                             buildTextField(
-                                controller.phoneController, "Nomor Telepon/WA"),
+                                controller.phoneController, "Nomor Telp/WA"),
                           ],
                           buildDropdown(controller),
-                          SizedBox(
-                              height: MediaQuery.of(context).size.height * 0.1),
+                          SizedBox(height: 25),
                           Obx(() => ElevatedButton(
                                 onPressed: controller.isLoading.value
                                     ? null
@@ -91,6 +90,9 @@ class RegisterPage extends StatelessWidget {
                                 style: ElevatedButton.styleFrom(
                                   backgroundColor: Colors.amber,
                                   minimumSize: Size(double.infinity, 50),
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(10),
+                                  ),
                                 ),
                                 child: controller.isLoading.value
                                     ? CircularProgressIndicator(
@@ -98,19 +100,38 @@ class RegisterPage extends StatelessWidget {
                                     : Text("Sign up",
                                         style: TextStyle(color: Colors.white)),
                               )),
-                          SizedBox(height: 10),
-                          TextButton(
-                            onPressed: () {
-                              if (userType == 'sekolah') {
-                                Get.toNamed('/loginSekolah');
-                              } else {
-                                Get.toNamed('/loginDistributor');
-                              }
-                            },
-                            child: Text(
-                              "Already have an account? Login",
-                              style:
-                                  TextStyle(color: Colors.blue, fontSize: 14),
+                          SizedBox(height: 35),
+                          Center(
+                            child: Text.rich(
+                              TextSpan(
+                                text: "Already have an account? ",
+                                style: TextStyle(
+                                  color: Colors.black,
+                                  fontSize: 14,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                                children: [
+                                  WidgetSpan(
+                                    child: GestureDetector(
+                                      onTap: () {
+                                        if (userType == 'sekolah') {
+                                          Get.toNamed('/loginSekolah');
+                                        } else {
+                                          Get.toNamed('/loginDistributor');
+                                        }
+                                      },
+                                      child: Text(
+                                        "Login",
+                                        style: TextStyle(
+                                          color: Colors.blue,
+                                          fontSize: 14,
+                                          fontWeight: FontWeight.bold,
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
                             ),
                           ),
                         ],
@@ -120,8 +141,8 @@ class RegisterPage extends StatelessWidget {
                 ],
               ),
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }
@@ -135,7 +156,7 @@ class RegisterPage extends StatelessWidget {
         obscureText: isPassword,
         decoration: InputDecoration(
           hintText: hint,
-          border: OutlineInputBorder(borderRadius: BorderRadius.circular(10)),
+          border: InputBorder.none,
           filled: true,
           fillColor: Colors.grey[200],
         ),
@@ -160,7 +181,7 @@ class RegisterPage extends StatelessWidget {
           controller.selectedRegion.value = value!;
         },
         decoration: InputDecoration(
-          border: OutlineInputBorder(borderRadius: BorderRadius.circular(10)),
+          border: InputBorder.none,
           filled: true,
           fillColor: Colors.grey[200],
           hintText: "Daerah",
