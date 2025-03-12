@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:pesanbuku_app/Widgets/custom_painter_background.dart';
 import 'package:pesanbuku_app/Widgets/option_card.dart';
 
@@ -56,15 +57,13 @@ class OnboardingScreen extends StatelessWidget {
                 alignment: WrapAlignment.center,
                 children: [
                   OptionCard(
-                    imagePath: 'assets/Images/distributor.png',
-                    title: 'Distributor',
-                    onTap: () {},
-                  ),
+                      imagePath: 'assets/Images/distributor.png',
+                      title: 'Distributor',
+                      onTap: () => Get.toNamed('/registerDistributor')),
                   OptionCard(
-                    imagePath: 'assets/Images/sekolah.png',
-                    title: 'Sekolah',
-                    onTap: () {},
-                  ),
+                      imagePath: 'assets/Images/sekolah.png',
+                      title: 'Sekolah',
+                      onTap: () => Get.toNamed('/registerSekolah')),
                 ],
               ),
             ),

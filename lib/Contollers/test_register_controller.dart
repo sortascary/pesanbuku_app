@@ -25,9 +25,8 @@ class TestRegisterController extends GetxController {
       await _auth.verifyPhoneNumber(
         phoneNumber: PhoneController.text,
         verificationCompleted: (phoneAuthCredential) async {
-          // Auto sign-in if verification is completed automatically.
           await _auth.signInWithCredential(phoneAuthCredential);
-          Get.offAllNamed(MyRoutes.login); // Navigate to home on success.
+          Get.offAllNamed(MyRoutes.login);
         },
         verificationFailed: (error) {
           log(error.toString());
@@ -50,9 +49,7 @@ class TestRegisterController extends GetxController {
   Future<void> VerifyOTP() async {
     try {
       final cred = PhoneAuthProvider.credential(
-        verificationId: verifyID.value, 
-        smsCode: OTPController.text
-      );
+          verificationId: verifyID.value, smsCode: OTPController.text);
       UserCredential userCredential = await _auth.signInWithCredential(cred);
       Get.snackbar(
         'login',

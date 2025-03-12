@@ -1,0 +1,1 @@
+D:\flutter_vscode\pesanbuku_app\build\app\intermediates\cxx\Debug\3du8131x\obj\arm64-v8a
