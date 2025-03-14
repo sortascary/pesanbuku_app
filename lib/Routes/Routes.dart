@@ -6,6 +6,7 @@ import 'package:pesanbuku_app/Pages/Register_Page.dart';
 import 'package:pesanbuku_app/Pages/onboarding_page.dart';
 import 'package:pesanbuku_app/Pages/test_OTP_page.dart';
 import 'package:pesanbuku_app/Pages/test_register_page.dart';
+import 'package:pesanbuku_app/Pages/dashboard_page.dart';
 
 class MyRoutes {
   static const String login = '/login';
@@ -14,6 +15,8 @@ class MyRoutes {
   static const String loginSekolah = '/loginSekolah';
   static const String registerDistributor = '/registerDistributor';
   static const String registerSekolah = '/registerSekolah';
+  static const String dashboardDistributor = '/dashboard_distributor';
+  static const String dashboardSekolah = '/dashboard_sekolah';
   static const String testR = '/testR';
   static const String testOTP = '/testOTP';
 }
@@ -34,6 +37,14 @@ class AppPages {
       name: MyRoutes.registerDistributor,
       page: () => RegisterPage(userType: 'distributor'), 
       binding: RegisterBinding(),
+    ),
+     GetPage(
+      name: MyRoutes.dashboardDistributor,
+      page: () => DashboardScreen(userRole: "admin"), 
+    ),
+    GetPage(
+      name: MyRoutes.dashboardSekolah,
+      page: () => DashboardScreen(userRole: "sekolah"), 
     ),
     GetPage(
       name: MyRoutes.onBoarding,
