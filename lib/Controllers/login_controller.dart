@@ -1,4 +1,5 @@
 import 'package:get/get.dart';
+import 'package:pesanbuku_app/Routes/Routes.dart';
 
 class LoginController extends GetxController {
   var username = ''.obs;
@@ -12,10 +13,10 @@ class LoginController extends GetxController {
 
     if (username.value == "admin" && password.value == "123") {
       userType.value = "admin";
-      Get.offNamed('/dashboardAdmin');
+      Get.offNamed(MyRoutes.dashboardDistributor, arguments: {"userRole": "admin"}); 
     } else if (username.value == "sekolah" && password.value == "123") {
       userType.value = "sekolah";
-      Get.offNamed('/dashboardSekolah');
+      Get.offNamed(MyRoutes.dashboardSekolah, arguments: {"userRole": "sekolah"});  
     } else {
       Get.snackbar("Error", "Username atau Password salah",
           snackPosition: SnackPosition.BOTTOM);
