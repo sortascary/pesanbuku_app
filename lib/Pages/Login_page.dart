@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:pesanbuku_app/Controllers/login_controller.dart';
+import 'package:pesanbuku_app/Controllers/auth/login_controller.dart';
 import 'package:pesanbuku_app/Widgets/custom_painter_background.dart';
 
 class LoginPage extends StatelessWidget {
