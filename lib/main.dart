@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:pesanbuku_app/Routes/Routes.dart';
 import 'package:pesanbuku_app/firebase_options.dart';
-import 'package:pesanbuku_app/Pages/onboarding_page.dart';
+import 'package:pesanbuku_app/Pages/Onboarding_page.dart';
 
 Future<void> main() async {
   try {

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:pesanbuku_app/Controllers/register_controller.dart';
+import 'package:pesanbuku_app/Controllers/auth/register_controller.dart';
 import 'package:pesanbuku_app/Widgets/custom_painter_background.dart';
 
 class RegisterPage extends StatelessWidget {
