@@ -12,7 +12,7 @@ class AuthService {
           data: {
             'phone': phone,
             'password': password,
-            'fcm_token': fcmToken
+            'FCMToken': fcmToken
           }
       );
 
@@ -21,4 +21,5 @@ class AuthService {
       throw Exception(e);
     }
   }
+
 }
