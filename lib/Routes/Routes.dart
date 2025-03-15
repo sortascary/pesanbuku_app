@@ -4,8 +4,8 @@ import 'package:pesanbuku_app/Bindings/register_binding.dart';
 import 'package:pesanbuku_app/Pages/Login_page.dart';
 import 'package:pesanbuku_app/Pages/Register_Page.dart';
 import 'package:pesanbuku_app/Pages/Onboarding_page.dart';
-import 'package:pesanbuku_app/Pages/test_OTP_page.dart';
-import 'package:pesanbuku_app/Pages/test_register_page.dart';
+import 'package:pesanbuku_app/Pages/test/test_OTP_page.dart';
+import 'package:pesanbuku_app/Pages/test/test_register_page.dart';
 import 'package:pesanbuku_app/Pages/Dashboard_page.dart';
 
 class MyRoutes {

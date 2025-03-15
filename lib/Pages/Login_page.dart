@@ -61,8 +61,8 @@ class LoginPage extends StatelessWidget {
                     child: SingleChildScrollView(
                       child: Column(
                         children: [
-                          buildTextField(controller.username, "Nama"),
-                          buildTextField(controller.password, "Password", isPassword: true),
+                          buildTextField(controller.phoneController, "Nama"),
+                          buildTextField(controller.passwordController, "Password", isPassword: true),
                           SizedBox(height: 25),
                           Obx(() => ElevatedButton(
                                 onPressed: controller.isLoading.value ? null : controller.login,
@@ -124,11 +124,11 @@ class LoginPage extends StatelessWidget {
     );
   }
 
-  Widget buildTextField(RxString value, String hint, {bool isPassword = false}) {
+  Widget buildTextField(TextEditingController controller, String hint, {bool isPassword = false}) {
     return Padding(
       padding: const EdgeInsets.only(bottom: 15.0),
       child: TextField(
-        onChanged: (val) => value.value = val,
+        controller: controller,
         obscureText: isPassword,
         decoration: InputDecoration(
           hintText: hint,
