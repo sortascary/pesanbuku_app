@@ -19,18 +19,18 @@ final AuthService auth = AuthService();
 
   Future<void> login() async {
     try {
-    isLoading.value = true;
+      isLoading.value = true;
       final fcmToken = await FirebaseMessaging.instance.getToken();
       if (phoneController.text == "admin" && passwordController.text == "123") {
-      userType.value = "admin";
+        userType.value = "admin";
         Get.offNamed(MyRoutes.dashboardDistributor, arguments: {"userRole": userType.value}); 
       } else if (phoneController.text == "sekolah" && passwordController.text == "123") {
-      userType.value = "sekolah";
+        userType.value = "sekolah";
         Get.offNamed(MyRoutes.dashboardSekolah, arguments: {"userRole": userType.value});  
-    } else {
-      Get.snackbar("Error", "Username atau Password salah",
-          snackPosition: SnackPosition.BOTTOM);
-    }
+      } else {
+        Get.snackbar("Error", "Username atau Password salah",
+            snackPosition: SnackPosition.BOTTOM);
+      }
 
       // final response = await auth.login(
       //     phoneController.text,
@@ -58,5 +58,5 @@ final AuthService auth = AuthService();
     } finally {
       isLoading(false);
     }
-  }
+    }
 }
