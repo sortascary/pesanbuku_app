@@ -1,11 +1,11 @@
 import 'package:get/get.dart';
-import 'package:pesanbuku_app/Bindings/login_binding.dart';
-import 'package:pesanbuku_app/Bindings/register_binding.dart';
-import 'package:pesanbuku_app/Pages/Login_page.dart';
-import 'package:pesanbuku_app/Pages/Register_Page.dart';
+import 'package:pesanbuku_app/bindings/login_binding.dart';
+import 'package:pesanbuku_app/bindings/register_binding.dart';
+import 'package:pesanbuku_app/pages/Login_page.dart';
+import 'package:pesanbuku_app/pages/Register_Page.dart';
 import 'package:pesanbuku_app/Pages/Onboarding_page.dart';
-import 'package:pesanbuku_app/Pages/test_OTP_page.dart';
-import 'package:pesanbuku_app/Pages/test_register_page.dart';
+import 'package:pesanbuku_app/pages/test_OTP_page.dart';
+import 'package:pesanbuku_app/pages/test_register_page.dart';
 import 'package:pesanbuku_app/Pages/Dashboard_page.dart';
 
 class MyRoutes {

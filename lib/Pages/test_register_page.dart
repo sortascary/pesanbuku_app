@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:pesanbuku_app/Controllers/test_register_controller.dart';
+import 'package:pesanbuku_app/controllers/test_register_controller.dart';
 
 class TestRegisterPage extends StatelessWidget {
   const TestRegisterPage({super.key});
