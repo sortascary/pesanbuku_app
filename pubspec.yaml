@@ -69,7 +69,8 @@ flutter:
     - assets/images/logo_maestro.png
     - assets/images/distributor.png
     - assets/images/sekolah.png
-    - assets/images/image.png
+    - assets/images/order_now.png
+    - assets/images/book.png
     - assets/svg/
 
   fonts:
