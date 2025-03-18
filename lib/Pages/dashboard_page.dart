@@ -3,6 +3,7 @@ import 'bottom_nav_bar.dart';
 
 class DashboardScreen extends StatelessWidget {
   final String userRole;
+  
 
   DashboardScreen({Key? key, required this.userRole}) : super(key: key);
 
@@ -143,7 +144,7 @@ class DashboardScreen extends StatelessWidget {
                   Container(
                     padding: const EdgeInsets.symmetric(vertical: 10),
                     child: Image.asset(
-                      'assets/Images/image.png',
+                      'assets/images/image.png',
                       height: 150,
                       width: 150,
                       fit: BoxFit.contain,
@@ -170,7 +171,6 @@ class DashboardScreen extends StatelessWidget {
               ],
             ),
           ),
-          BottomNavBar(),
         ],
       ),
     );

@@ -1,4 +1,5 @@
 import 'package:get/get.dart';
+import 'package:pesanbuku_app/Pages/bottom_nav_bar.dart';
 import 'package:pesanbuku_app/bindings/login_binding.dart';
 import 'package:pesanbuku_app/bindings/register_binding.dart';
 import 'package:pesanbuku_app/pages/login_page.dart';
@@ -40,11 +41,11 @@ class AppPages {
     ),
      GetPage(
       name: MyRoutes.dashboardDistributor,
-      page: () => DashboardScreen(userRole: "admin"), 
+      page: () => BottomNavBar(userRole: "admin"), 
     ),
     GetPage(
       name: MyRoutes.dashboardSekolah,
-      page: () => DashboardScreen(userRole: "sekolah"), 
+      page: () => BottomNavBar(userRole: "sekolah"), 
     ),
     GetPage(
       name: MyRoutes.onBoarding,

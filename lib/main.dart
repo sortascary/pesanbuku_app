@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:pesanbuku_app/routes/routes.dart';
 import 'package:pesanbuku_app/firebase_options.dart';
+import 'package:pesanbuku_app/controllers/bottom_nav_bar_controller.dart';
 import 'package:pesanbuku_app/Pages/Onboarding_page.dart';
 
 Future<void> main() async {
@@ -11,6 +12,9 @@ Future<void> main() async {
     await Firebase.initializeApp(
       options: DefaultFirebaseOptions.currentPlatform,
     );
+
+    Get.put(BottomNavController());
+
     runApp(const MyApp());
   } catch (e) {
     print('Error initializing app: $e');
