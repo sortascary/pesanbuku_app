@@ -82,7 +82,7 @@ class OrderPage extends StatelessWidget {
           ClipRRect(
             borderRadius: BorderRadius.circular(8),
             child: Image.asset(
-              'assets/Images/book.png',
+              'assets/images/book.png',
               width: 80,
               height: 80,
               fit: BoxFit.cover,

@@ -143,7 +143,7 @@ class DashboardScreen extends StatelessWidget {
                   Container(
                     padding: const EdgeInsets.symmetric(vertical: 10),
                     child: Image.asset(
-                      'assets/Images/order_now.png',
+                      'assets/images/order_now.png',
                       height: 150,
                       width: 150,
                       fit: BoxFit.contain,
