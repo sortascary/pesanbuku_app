@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'bottom_nav_bar.dart';
 
 class DashboardScreen extends StatelessWidget {
   final String userRole;
@@ -144,7 +143,7 @@ class DashboardScreen extends StatelessWidget {
                   Container(
                     padding: const EdgeInsets.symmetric(vertical: 10),
                     child: Image.asset(
-                      'assets/images/image.png',
+                      'assets/Images/order_now.png',
                       height: 150,
                       width: 150,
                       fit: BoxFit.contain,

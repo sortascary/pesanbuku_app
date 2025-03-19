@@ -22,7 +22,7 @@ class OnboardingScreen extends StatelessWidget {
             child: Column(
               children: [
                 Image.asset(
-                  'assets/images/logo_maestro.png',
+                  'assets/Images/logo_maestro.png',
                   height: 140,
                 ),
                 const SizedBox(height: 5),
@@ -57,11 +57,11 @@ class OnboardingScreen extends StatelessWidget {
                 alignment: WrapAlignment.center,
                 children: [
                   OptionCard(
-                      imagePath: 'assets/images/distributor.png',
+                      imagePath: 'assets/Images/distributor.png',
                       title: 'Distributor',
                       onTap: () => Get.toNamed('/registerDistributor')),
                   OptionCard(
-                      imagePath: 'assets/images/sekolah.png',
+                      imagePath: 'assets/Images/sekolah.png',
                       title: 'Sekolah',
                       onTap: () => Get.toNamed('/registerSekolah')),
                 ],
