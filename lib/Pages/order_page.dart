@@ -55,7 +55,7 @@ class OrderPage extends StatelessWidget {
     return Padding(
       padding: EdgeInsets.all(16.0),
       child: ListView.builder(
-        itemCount: 1, // Contoh data
+        itemCount: 1, 
         itemBuilder: (context, index) {
           return _buildOrderCard(status);
         },
@@ -82,7 +82,7 @@ class OrderPage extends StatelessWidget {
           ClipRRect(
             borderRadius: BorderRadius.circular(8),
             child: Image.asset(
-              'assets/images/book.png',
+              'assets/Images/book.png',
               width: 80,
               height: 80,
               fit: BoxFit.cover,

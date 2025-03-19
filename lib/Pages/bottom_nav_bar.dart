@@ -7,20 +7,20 @@ import 'package:pesanbuku_app/Pages/profile_page.dart';
 
 class BottomNavBar extends StatelessWidget {
   final BottomNavController controller = Get.put(BottomNavController());
-  final String userRole; 
+  final String userRole;
 
   BottomNavBar({Key? key, required this.userRole}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     final List<Widget> pages = [
-      DashboardScreen(userRole: userRole), 
-      OrderPage(userRole: userRole), 
-      ProfilePage(userRole: userRole), 
+      DashboardScreen(userRole: userRole),
+      OrderPage(userRole: userRole),
+      ProfilePage(userRole: userRole),
     ];
 
     return Scaffold(
-      body: Obx(() => pages[controller.selectedIndex.value]), 
+      body: Obx(() => pages[controller.selectedIndex.value]),
       bottomNavigationBar: ClipRRect(
         borderRadius: const BorderRadius.only(
           topLeft: Radius.circular(25),
@@ -48,7 +48,8 @@ class BottomNavBar extends StatelessWidget {
                     label: "",
                   ),
                   BottomNavigationBarItem(
-                    icon: _buildIconWithCircle(2, Icons.person_outline_outlined),
+                    icon:
+                        _buildIconWithCircle(2, Icons.person_outline_outlined),
                     label: "",
                   ),
                 ],
