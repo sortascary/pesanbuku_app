@@ -61,7 +61,7 @@ class LoginPage extends StatelessWidget {
                     child: SingleChildScrollView(
                       child: Column(
                         children: [
-                          buildTextField(controller.phoneController, "Nama"),
+                          buildTextField(controller.phoneController, "Phone"),
                           buildTextField(controller.passwordController, "Password", isPassword: true),
                           SizedBox(height: 25),
                           Obx(() => ElevatedButton(
