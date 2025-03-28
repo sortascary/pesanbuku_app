@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:pesanbuku_app/controllers/auth/register_controller.dart';
 import 'package:pesanbuku_app/Widgets/custom_painter_background.dart';
 
 class RegisterPage extends StatelessWidget {
@@ -10,8 +9,6 @@ class RegisterPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final RegisterController controller = Get.find<RegisterController>();
-
     return Scaffold(
       body: Stack(
         children: [
@@ -57,49 +54,36 @@ class RegisterPage extends StatelessWidget {
                       child: Column(
                         children: [
                           if (userType == 'distributor') ...[
-                            buildTextField(controller.nameController, "Nama"),
-                            buildTextField(
-                                controller.passwordController, "Password",
-                                isPassword: true),
-                            buildTextField(
-                                controller.keyController, "Distributor Key"),
+                            buildTextField("Nama"),
+                            buildTextField("Password", isPassword: true),
+                            buildTextField("Confirm Password", isPassword: true),
+                            buildTextField("Distributor Key"),
                           ] else if (userType == 'sekolah') ...[
-                            buildTextField(controller.schoolNameController,
-                                "Nama sekolah"),
-                            buildTextField(controller.headNameController,
-                                "Kepala/Perwakilan sekolah"),
-                            buildTextField(
-                                controller.passwordController, "Password",
-                                isPassword: true),
-                            buildTextField(
-                                controller.phoneController, "Nomor Telp/WA"),
+                            buildTextField("Nama sekolah"),
+                            buildTextField("Kepala/Perwakilan sekolah"),
+                            buildTextField("Password", isPassword: true),
+                            buildTextField("Confirm Password", isPassword: true),
+                            buildTextField("Nomor Telp/WA"),
+                            buildDropdown(),
                           ],
-                          buildDropdown(controller),
                           SizedBox(height: 25),
-                          Obx(() => ElevatedButton(
-                                onPressed: controller.isLoading.value
-                                    ? null
-                                    : () async {
-                                        await controller.register();
-                                        if (userType == 'sekolah') {
-                                          Get.offNamed('/loginSekolah');
-                                        } else {
-                                          Get.offNamed('/loginDistributor');
-                                        }
-                                      },
-                                style: ElevatedButton.styleFrom(
-                                  backgroundColor: Colors.amber,
-                                  minimumSize: Size(double.infinity, 50),
-                                  shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(10),
-                                  ),
-                                ),
-                                child: controller.isLoading.value
-                                    ? CircularProgressIndicator(
-                                        color: Colors.white)
-                                    : Text("Sign up",
-                                        style: TextStyle(color: Colors.white)),
-                              )),
+                          ElevatedButton(
+                            onPressed: () {
+                              if (userType == 'sekolah') {
+                                Get.offNamed('/loginSekolah');
+                              } else {
+                                Get.offNamed('/loginDistributor');
+                              }
+                            },
+                            style: ElevatedButton.styleFrom(
+                              backgroundColor: Colors.amber,
+                              minimumSize: Size(double.infinity, 50),
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(10),
+                              ),
+                            ),
+                            child: Text("Sign up", style: TextStyle(color: Colors.white)),
+                          ),
                           SizedBox(height: 35),
                           Center(
                             child: Text.rich(
@@ -147,12 +131,10 @@ class RegisterPage extends StatelessWidget {
     );
   }
 
-  Widget buildTextField(TextEditingController controller, String hint,
-      {bool isPassword = false}) {
+  Widget buildTextField(String hint, {bool isPassword = false}) {
     return Padding(
       padding: const EdgeInsets.only(bottom: 15.0),
       child: TextField(
-        controller: controller,
         obscureText: isPassword,
         decoration: InputDecoration(
           hintText: hint,
@@ -164,22 +146,17 @@ class RegisterPage extends StatelessWidget {
     );
   }
 
-  Widget buildDropdown(RegisterController controller) {
+  Widget buildDropdown() {
     return Padding(
       padding: const EdgeInsets.only(bottom: 15.0),
       child: DropdownButtonFormField<String>(
-        value: controller.selectedRegion.value.isNotEmpty
-            ? controller.selectedRegion.value
-            : null,
         items: ["Kudus", "Jepara", "Demak"].map((String value) {
           return DropdownMenuItem<String>(
             value: value,
             child: Text(value),
           );
         }).toList(),
-        onChanged: (value) {
-          controller.selectedRegion.value = value!;
-        },
+        onChanged: (value) {},
         decoration: InputDecoration(
           border: InputBorder.none,
           filled: true,
