@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:pesanbuku_app/controllers/bottom_nav_bar_controller.dart';
+import 'package:pesanbuku_app/Controllers/bottom_nav_bar_controller.dart';
 import 'package:pesanbuku_app/Pages/dashboard_page.dart';
 import 'package:pesanbuku_app/Pages/order_page.dart';
 import 'package:pesanbuku_app/Pages/profile_page.dart';

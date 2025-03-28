@@ -1,9 +1,9 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:pesanbuku_app/Controllers/bottom_nav_bar_controller.dart';
 import 'package:pesanbuku_app/routes/routes.dart';
 import 'package:pesanbuku_app/firebase_options.dart';
-import 'package:pesanbuku_app/controllers/bottom_nav_bar_controller.dart';
 import 'package:pesanbuku_app/Pages/Onboarding_page.dart';
 
 Future<void> main() async {
